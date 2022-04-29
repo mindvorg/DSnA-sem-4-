@@ -26,16 +26,7 @@
     <ClInclude Include="Iterator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="RBTree2.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Dft_iterator.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="List.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Elemlist.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="map.h">

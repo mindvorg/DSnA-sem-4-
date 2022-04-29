@@ -12,5 +12,8 @@ namespace lab1sem4
 		TEST_METHOD(TestMethod1)
 		{
 		}
+		TEST_METHOD(TestMethod2)
+		{
+		}
 	};
 }

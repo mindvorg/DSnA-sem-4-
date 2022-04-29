@@ -142,14 +142,11 @@
     <ClCompile Include="lab1 sem 4 DSnA.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Dft_iterator.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="Pair.h" />
     <ClInclude Include="RBTree.h" />
-    <ClInclude Include="RBTree2.h" />
     <ClInclude Include="Iterator.h" />
     <ClInclude Include="List.h" />
-    <ClInclude Include="Elemlist.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>

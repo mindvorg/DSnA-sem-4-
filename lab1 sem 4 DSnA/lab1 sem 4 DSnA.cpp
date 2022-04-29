@@ -1,6 +1,5 @@
 ﻿// lab1 sem 4 DSnA.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-#include"Elemlist.h"
 #include"List.h"
 #include <iostream>
 #include"RBTree.h"
