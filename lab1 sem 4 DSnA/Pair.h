@@ -17,7 +17,6 @@ public:
 	}
 	~Pair() {}
 
-private:
 
 };
 template< typename Key, typename Value>

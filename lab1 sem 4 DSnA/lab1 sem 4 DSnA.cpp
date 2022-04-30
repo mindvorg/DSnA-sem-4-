@@ -1,38 +1,44 @@
 ﻿// lab1 sem 4 DSnA.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-#include"List.h"
 #include <iostream>
-#include"RBTree.h"
 #include"map.h"
-
+#include"RBTree.h"
 int main()
 {
     std::cout << "Hello World!\n";
-    Map<int, int> array;
-    List<int>* keys;
+    Map<int, int> rbtree;
+
+    RBTree<int, int> tree;
+    List<int> keys;
     List<int>* values;
-    array.insert(10, 10);
-    array.insert(13, 13);
-    array.insert(8, 8);
-    array.insert(5, 5);
-    array.insert(17, 17);
-    array.insert(12, 12);
-    array.insert(9, 9);
-    array.insert(11, 11);
-    array.insert(4, 4);
-    array.insert(3, 3);
+    rbtree.insert(10, 10);
+    rbtree.insert(13, 13);
+    rbtree.insert(8, 8);
+    rbtree.insert(5, 5);
+    rbtree.insert(17, 17);
+    rbtree.insert(12, 12);
+    rbtree.insert(9, 9);
+    rbtree.insert(11, 11);
+    rbtree.insert(4, 4);
+    rbtree.insert(3, 3);
+    rbtree.insert(7, 7);
+
+
+
+    cout << rbtree.find(10) << endl;
+
+    auto c = tree.findElem(10)->getColor();
+    cout << c << endl;
+    cout << rbtree.find(13) << endl;
+    cout<<rbtree.find(5)<<endl;
+
+auto key = rbtree.getkeys();
+    cout << "at 0 is" << key->head->data << endl;
+    values = rbtree.getValues();
     //array.clear();
-    //array.remove(10);
-    array.insert(7, 7);
-    cout<<"asd " <<array.find(5)<<endl;
-    keys = array.getkeys();
-    cout<<array.getkeys();
-    values = array.getValues();
-    cout << array.getValues();
-    //array.clear();
-    array.print();
-    array.clear();
-    array.print();
+    rbtree.print();
+    rbtree.clear();
+    rbtree.print();
    
 }
 

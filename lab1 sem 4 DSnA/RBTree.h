@@ -29,6 +29,12 @@ private:
 		}
 		Elem() { left = NULL; right = NULL; parent = NULL; key = NULL; data = 0; color = Color::RED; }
 		~Elem() { if (key != NULL) delete key; }
+		int getColor() {
+			if (color == Color::BLACK)
+				return 1;
+			else
+				return 0;
+		}
 	};
 
 public:
@@ -72,72 +78,12 @@ public:
 			}
 			delete newiterator;
 	}
-	/*/~RBTree()
-	{
-		auto iterator = createIterator();
-		while (iterator->has_next())
-		{
-			Elem* tmp = iterator->cur;
-			iterator->next();
-			delete tmp;
-			delete nill;
-		}
-	}*/
-	/*class RBTreeIterator : public Iterator<Pair<Key, Value>>
-	{public:
-		friend class RBTree;
-		Stack<Elem*>* stack;
-		Elem* cur;
-		RBTreeIterator(Elem* root) { cur = root; stack = new Stack<Elem*>(); }
-		~RBTreeIterator() { delete stack; }
-		bool has_next() { return cur != NULL; }
-		Pair<Key, Value> next()
-		{
-			Elem* tmp = cur;
-			Pair<Key, Value> pair = makepair(*tmp->key, tmp->data);
-			if (cur->right->key != NULL) { stack->push(cur->right); }
-			if (cur->left->key != nullptr)
-			{
-				cur = cur->left;
-			}
-			else
-			{
-				if (!stack->empty())
-				{
-					cur = stack->top();
-					stack->pop();
-				}
-				else
-				{
-					cur = NULL;
-				}
-			}
-
-			return pair;
-		}
-	};*///закомичено до пиздеца (19:51)
-
-	/*
-	List<Value>* getValues()
-	{
-		List < Value>* values = new List<Key>();
-		TreeIterator* iterator = createIterator();
-		while (iterator->has_next())
-		{
-			Elem* next = iterator->next();
-			Value value = next->data;
-			values->pushBack(value);
-		}
-		delete iterator;
-		return values;
-	}
-	*/
-
+	
 	void printtree() {
 		TreeIterator* iterator = createIterator();
 		while (iterator->has_next()) {
 			Elem* next = iterator->next();
-			cout << "Key is=" << *next->key << " and data is=" << next->data << endl;
+			cout << "Key is=" << *next->key << " and data is=" << next->data<< endl;
 		}
 		delete iterator;
 	}
@@ -145,10 +91,6 @@ public:
 	{
 		return new TreeIterator(root, nill);
 	}
-	/*RBTreeIterator* createIterator()
-	{
-		return new RBTreeIterator(root);
-	}*/
 	void leftSwitch(Elem* x)
 	{
 		Elem* y = x->right;
@@ -447,11 +389,7 @@ public:
 	List<Key>* getKeys()
 	{
 		List <Key>* keys = new List<Key>();
-		//Iterator<Elem*>* iterator;
-		//RBTreeIterator <Pair<Key,Value>>* iterator = createIterator(); 
 		TreeIterator* iterator = createIterator();
-		//while(iterator->has_next())
-		//while (iterator->has_next())
 		while(iterator->has_next())
 		{
 			Elem*  next = iterator->next();
