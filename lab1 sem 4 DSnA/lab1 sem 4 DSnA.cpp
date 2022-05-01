@@ -11,6 +11,9 @@ int main()
     RBTree<int, int> tree;
     List<int> keys;
     List<int>* values;
+    
+    auto keуy = rbtree.getkeys();
+
     rbtree.insert(10, 10);
     rbtree.insert(13, 13);
     rbtree.insert(8, 8);
@@ -24,7 +27,6 @@ int main()
     rbtree.insert(7, 7);
 
 
-
     cout << rbtree.find(10) << endl;
 
     auto c = tree.findElem(10)->getColor();
@@ -33,11 +35,12 @@ int main()
     cout<<rbtree.find(5)<<endl;
 
 auto key = rbtree.getkeys();
-    cout << "at 0 is" << key->head->data << endl;
+    cout << "at 0 is " << key->head->data << endl;
     values = rbtree.getValues();
     //array.clear();
     rbtree.print();
     rbtree.clear();
+    key = rbtree.getkeys();
     rbtree.print();
    
 }

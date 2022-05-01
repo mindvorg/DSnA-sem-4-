@@ -65,8 +65,22 @@ namespace lab1sem4
 			auto value = tree.getValues();//10-8-13
 			Assert::AreEqual(10, value->head->data);
 			Assert::AreEqual(8, value->head->next->data);
+			Assert::AreEqual(8, value->tail->prev->data);
 			Assert::AreEqual(13, value->tail->data);
 		}
-
+		TEST_METHOD(TestClear)
+		{
+			Map<int, int> tree;
+			tree.insert(10, 10);
+			tree.insert(13, 13);
+			tree.insert(8, 8);
+			tree.insert(15, 15);
+			tree.clear();
+			tree.insert(1, 1);
+			auto value = tree.getValues();
+			auto key = tree.getkeys(); 
+			Assert::AreEqual(1, value->head->data);
+			Assert::AreEqual(1, value->tail->data);
+		}
 	};
 }
